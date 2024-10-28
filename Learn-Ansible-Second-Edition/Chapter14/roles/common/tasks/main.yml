@@ -1,0 +1,6 @@
+---
+# tasks file for roles/common
+
+- name: "Set a fact for the date"
+  ansible.builtin.set_fact:
+    the_date: "{{ lookup('pipe', 'date +%Y-%m-%d-%H%M') }}"

@@ -1,0 +1,16 @@
+---
+
+- name: "Install LAMP stack"
+  hosts: ansible_hosts
+  gather_facts: true
+  become: true
+  become_method: ansible.builtin.sudo
+
+  vars_files:
+    - group_vars/common.yml
+
+  roles:
+    - common
+    - apache
+    - mariadb
+    - php
