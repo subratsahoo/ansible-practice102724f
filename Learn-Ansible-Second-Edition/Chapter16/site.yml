@@ -21,4 +21,4 @@
   roles:
     - "stack_install"
     - "stack_config"
-    - "wordpress"
+#    - "wordpress"
