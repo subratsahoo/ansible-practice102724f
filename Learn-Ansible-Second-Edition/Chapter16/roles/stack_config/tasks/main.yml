@@ -118,12 +118,12 @@
     dest: "~/.my.cnf"
     mode: "0644"
 
-- name: "Delete anonymous MySQL user"
-  community.mysql.mysql_user:
-    user: ""
-    host: "{{ item }}"
-    state: "absent"
-  with_items: "{{ mariadb.hosts }}"
+#- name: "Delete anonymous MySQL user"
+#  community.mysql.mysql_user:
+#    user: ""
+#    host: "{{ item }}"
+#    state: "absent"
+#  with_items: "{{ mariadb.hosts }}"
 
 - name: "Remove the MySQL test database"
   community.mysql.mysql_db:
