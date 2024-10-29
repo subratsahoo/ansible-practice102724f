@@ -42,9 +42,9 @@
     var: "subnet_output"
   when: debug_output
 
-- name: "Find out your current public IP address using ipify"
-  community.general.ipify_facts:
-  register: public_ip_output
+#- name: "Find out your current public IP address using ipify"
+#  community.general.ipify_facts:
+#  register: public_ip_output
 
 - name: "Debug - Public IP result"
   ansible.builtin.debug:
