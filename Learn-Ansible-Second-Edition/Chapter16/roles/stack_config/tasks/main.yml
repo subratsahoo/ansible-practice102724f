@@ -125,7 +125,7 @@
 #    state: "absent"
 #  with_items: "{{ mariadb.hosts }}"
 
-- name: "Remove the MySQL test database"
-  community.mysql.mysql_db:
-    db: "test"
-    state: "absent"
+#- name: "Remove the MySQL test database"
+#  community.mysql.mysql_db:
+#    db: "test"
+#    state: "absent"
