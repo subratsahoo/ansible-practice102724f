@@ -1,1 +1,9 @@
-
+---
+- name: Simple AWX Playbook
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Ensure the message is displayed
+      debug:
+        msg: "Hello, this is a simple AWX playbook running on localhost!"
+        
