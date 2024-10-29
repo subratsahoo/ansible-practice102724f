@@ -96,21 +96,21 @@
     path: "~/.my.cnf"
   register: mycnf
 
-- name: "Change mysql root password if we need to"
-  community.mysql.mysql_user:
-    name: "{{ mariadb.username }}"
-    host: "{{ item }}"
-    password: "{{ mariadb.password }}"
-    check_implicit_admin: "true"
-    priv: "*.*:ALL,GRANT"
-    login_user: "{{ mariadb.username }}"
-    login_unix_socket: /var/run/mysqld/mysqld.sock
-  with_items: "{{ mariadb.hosts }}"
-  when: not mycnf.stat.exists
-  register: change_mysql_password_result
-  retries: 3
-  delay: 10
-  until: change_mysql_password_result is not failed
+#- name: "Change mysql root password if we need to"
+ # community.mysql.mysql_user:
+ #   name: "{{ mariadb.username }}"
+ #   host: "{{ item }}"
+  #  password: "{{ mariadb.password }}"
+  #  check_implicit_admin: "true"
+  #  priv: "*.*:ALL,GRANT"
+  #  login_user: "{{ mariadb.username }}"
+   # login_unix_socket: /var/run/mysqld/mysqld.sock
+  #with_items: "{{ mariadb.hosts }}"
+  #when: not mycnf.stat.exists
+  #register: change_mysql_password_result
+  #retries: 3
+  #delay: 10
+  #until: change_mysql_password_result is not failed
 
 - name: "Set up .my.cnf file"
   ansible.builtin.template:
